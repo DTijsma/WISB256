@@ -2,8 +2,8 @@ import time
 import math
 import sys
 
-print('Number of arguments:', len(sys.argv), 'arguments.')
-print('Argument List:', str(sys.argv))
+#print('Number of arguments:', len(sys.argv), 'arguments.')
+#print('Argument List:', str(sys.argv))
 
 N=int(sys.argv[1])
 #N=int(input('Give a natural number. '))
