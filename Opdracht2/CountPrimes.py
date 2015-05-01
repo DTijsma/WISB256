@@ -12,8 +12,8 @@ for line in data:
 data.close()
 
 piN=len(primelist)
-largestprime=primelist[piN-1]
-ratio=piN*(math.log(largestprime))/largestprime
+lp=primelist[piN-1]
+ratio=piN*(math.log(lp))/lp
 
 k=1
 piN2=0
@@ -22,14 +22,16 @@ while k<piN:
         piN2+=1
     k+=1
 
-print('Largest Prime = ', largestprime)
-print('--------------------------------')
-print('pi(N)         = ', piN )
-print('N/log(N)      = ', largestprime/(math.log(largestprime)) )
-print('ratio         = ', ratio )
-print('--------------------------------')
-print('pi_2(N)       = ', piN2 )
-print('2CN/log(N)^2  = ', 2*C*largestprime/(math.log(largestprime))**2 )
-print('ratio         = ', piN2*((math.log(largestprime))**2)/(2*C*largestprime) )
-print('--------------------------------')
+logje=math.log(lp)
+
+print('Largest Prime =', lp)
+print('----------------------------------')
+print('pi(N)         =', piN )
+print('N/log(N)      =', lp/(logje) )
+print('ratio         =', ratio )
+print('----------------------------------')
+print('pi_2(N)       =', piN2 )
+print('2CN/log(N)^2  =', 2*C*lp/(logje)**2 )
+print('ratio         =', piN2*(logje)**2/(2*C*lp) )
+print('----------------------------------')
 
