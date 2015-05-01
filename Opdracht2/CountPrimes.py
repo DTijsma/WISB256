@@ -22,15 +22,14 @@ while k<piN:
         piN2+=1
     k+=1
 
+print('Largest Prime = ', largestprime)
 print('--------------------------------')
-print('Largest Prime =', largestprime)
+print('pi(N)         = ', piN )
+print('N/log(N)      = ', largestprime/(math.log(largestprime)) )
+print('ratio         = ', ratio )
 print('--------------------------------')
-print('pi(N)         =', piN )
-print('N/log(N)      =', largestprime/(math.log(largestprime)) )
-print('ratio         =', ratio )
-print('--------------------------------')
-print('pi_2(N)       =', piN2 )
-print('2CN/log(N)^2  =', 2*C*largestprime/(math.log(largestprime))**2 )
-print('ratio         =', piN2*((math.log(largestprime))**2)/(2*C*largestprime) )
+print('pi_2(N)       = ', piN2 )
+print('2CN/log(N)^2  = ', 2*C*largestprime/(math.log(largestprime))**2 )
+print('ratio         = ', piN2*((math.log(largestprime))**2)/(2*C*largestprime) )
 print('--------------------------------')
 
