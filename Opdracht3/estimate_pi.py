@@ -2,7 +2,7 @@ import sys
 import random
 import math
 
-if len(sys.argv)<=2:
+if len(sys.argv)<=2 or len(sys.argv)>=5:
     print('Use: estimate_pi.py N L')
 elif float(sys.argv[2])<=0:
     print('AssertionError: L should be greater than 0')
