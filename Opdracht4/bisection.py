@@ -17,8 +17,8 @@ def findRoot(f,a,b,epsilon):
 
 def findAllRoots(f,a,b,epsilon):
     lijstje=[]
-    d=abs(b-a)/10
-    for i in range(10):
+    d=abs(b-a)/10000
+    for i in range(10000):
         if f(a+d*i)*f(a+d*(i+1))<0:
             nulpunt=findRoot(f,a+d*i,a+(d+1)*i,epsilon)
             lijstje.append(nulpunt)
