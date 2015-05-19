@@ -22,7 +22,8 @@ def findAllRoots(f,a,b,epsilon):
         if f(a+d*i)*f(a+d*(i+1))<0:
             nulpunt=findRoot(f,a+d*i,a+(d+1)*i,epsilon)
             lijstje.append(nulpunt)
-    
+        if f(a+d*i)==0:
+            lijstje.append(a+d*i)
     
     return lijstje
     
