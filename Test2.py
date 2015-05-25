@@ -1,0 +1,26 @@
+from Vector import *
+
+
+print(Vector(2,[3,1]).lincomb(Vector(2,[2,2]),1,-1))
+W = GrammSchmidt([Vector(2,[3,1]),Vector(2,[2,2])])
+print(W[0])
+print(W[1])
+print(W[0].inner(W[1]))
+print(W[0].norm())
+#u1=Vector(3)
+#print(u1)
+#u3=Vector(3,[2.0, 3.14, -5])
+#print(u3)
+#u2=Vector(3,3.14)
+#print(u2)
+#u4=Vector(3,4)
+#print(u4)
+
+#u=Vector(3,[1,2,3])
+#v=Vector(3,3.5)
+#w=u.lincomb(v,10,1)
+#print(w)
+#w=w.scalar(2)
+#print(w)
+#print(w.norm())
+#print(w.inner(u))
