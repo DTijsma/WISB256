@@ -1,10 +1,11 @@
 import math
+
 class Vector:
     """Vectors in R^n"""
     
     def __init__(self,n,m=None):
         if m is None:
-            self.n=[0.000000]*n
+            self.n=[0]*n
         elif type(m)==list:
             self.n=m
         elif type(m)==float:
@@ -43,6 +44,7 @@ class Vector:
         for i in range(len(self.n)):
             nor=nor+float(self.n[i])**2
         return float(math.sqrt(nor))
+
 def GrammSchmidt(V):
     k=len(V)
     for i in range(k):
