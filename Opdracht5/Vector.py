@@ -5,21 +5,25 @@ class Vector:
     
     def __init__(self,n,m=None):
         if m is None:
-            self.n=[0]*n
+            self.n=[float(0)]*n
         elif type(m)==list:
-            self.n=m
+            self.n=list(m)
         elif type(m)==float:
             self.n=[m]*n
         elif type(m)==int:
             self.n=[m]*n
         
-        for i in range(n):
-            self.n[i]="%f" % self.n[i]
+        #for i in range(n):
+        #    self.n[i]="%f" % self.n[i]
 
     def __str__(self):
+        #lijstje=[0]*len(self.n)
+        lijstje=[]
         for i in range(len(self.n)):
-            self.n[i]=str(self.n[i])
-        return "\n".join(self.n)
+            lijstje.append(str(self.n[i]))
+            #lijstje[i]=str(self.n[i])
+            #self.n[i]=str(self.n[i])
+        return "\n".join(lijstje)
 
     def lincomb(self, other,alpha,beta):
         lcom=[]
