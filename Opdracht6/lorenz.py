@@ -28,13 +28,13 @@ class Lorenz(object):
     
     # Calculates Jacobian
     def df(self,u):
-        return np.matrix([[-self.a,self.a,0],[self.b-u[2],-1,0],[u[1],u[0],-self.c]])
+        return np.matrix([[-self.a,self.a,0],[self.b-u[2],-1,-u[0]],[u[1],u[0],-self.c]])
     
     # Checks if eigenvalues of Jacobian matrix are all negative and returns True if that's the case.
     def isStable(self,u):
         eigenvalues=linalg.eig(self.df(u))[0]
-        self.eigenvalues=eigenvalues
-        if self.eigenvalues[0]<0 and self.eigenvalues[1]<0 and self.eigenvalues[2]<0:
+        #self.eigenvalues=eigenvalues
+        if eigenvalues[0]<0 and eigenvalues[1]<0 and eigenvalues[2]<0:
             return True
         else:
             return False
