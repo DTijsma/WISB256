@@ -2,7 +2,7 @@ import numpy as np
 from scipy.integrate import odeint
 
 
-class Lorenz:
+class Lorenz(object):
     """Lorenz Attractors"""
     
     def __init__(self,initial,a=10,b=28,c=8/3):
