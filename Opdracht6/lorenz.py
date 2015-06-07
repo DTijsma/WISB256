@@ -23,6 +23,9 @@ class Lorenz(object):
         timelist=np.arange(0,T,dt)
         soln = odeint(func,self.initial, timelist)
         return soln
+    
+    def df(self,u):
+        return [[-self.a,self.a,0],[self.b-u[2],-1,0],[u[1],u[0],-self.c]]
 
 
 #sigma = 10
