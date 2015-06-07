@@ -32,8 +32,8 @@ class Lorenz(object):
     
     # Checks if eigenvalues of Jacobian matrix are all negative.
     def isStable(self,u):
-        eigenvalues=linalg.eig(self.df(u))[0]
-        if eigenvalues[0]<0 and eigenvalues[1]<0 and eigenvalues[2]<0:
+        self.eigenvalues=linalg.eig(self.df(u))[0]
+        if self.eigenvalues[0]<0 and self.eigenvalues[1]<0 and self.eigenvalues[2]<0:
             return True
         else:
             return False
