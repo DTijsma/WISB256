@@ -1,5 +1,6 @@
 import numpy as np
 from scipy.integrate import odeint
+from scipy import linalg
 
 
 class Lorenz(object):
@@ -21,11 +22,23 @@ class Lorenz(object):
             return [self.a*(Y-X), X*(self.b-Z)-Y, X*Y-self.c*Z]
         
         timelist=np.arange(0,T,dt)
+        # ODE solver.
         soln = odeint(func,self.initial, timelist)
         return soln
     
+    # Calculates Jacobian
     def df(self,u):
-        return [[-self.a,self.a,0],[self.b-u[2],-1,0],[u[1],u[0],-self.c]]
+        return np.array[[-self.a,self.a,0],[self.b-u[2],-1,0],[u[1],u[0],-self.c]]
+    
+    # Checks if eigenvalues of Jacobian matrix are all negative.
+    def isStable(self,u):
+        eigenvalues=linalg.eig(self.df(u))[0]
+        if eigenvalues[0]<0 and eigenvalues[1]<0 and eigenvalues[2]<0:
+            return True
+        else:
+            return False
+        
+        
 
 
 #sigma = 10
